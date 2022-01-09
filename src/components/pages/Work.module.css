@@ -1,0 +1,22 @@
+.content {
+  padding: 2rem;
+  height: calc(100vh - var(--tab-height));
+  overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray);
+}
+
+.projects {
+  margin-top: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  padding-bottom: 4rem;
+}

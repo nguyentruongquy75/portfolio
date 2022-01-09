@@ -1,0 +1,135 @@
+.project {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  grid-template-rows: 1fr;
+}
+
+.image__container {
+  position: relative;
+  z-index: 1;
+  grid-area: 1 /6 /-1/13;
+
+  display: flex;
+  align-items: center;
+  transition: all 0.3s linear;
+  background-color: #64ffda;
+  mix-blend-mode: screen;
+}
+
+.image__container:hover {
+  background-color: unset;
+}
+
+.image__container:hover .image {
+  filter: contrast(1) brightness(90%);
+}
+
+.image {
+  width: 100%;
+  padding-top: 50%;
+  position: relative;
+  mix-blend-mode: multiply;
+  filter: contrast(1) brightness(60%);
+  transition: all 0.2s linear;
+}
+
+.image a,
+.image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.image a {
+  z-index: 2;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  grid-area: 1 /1 /-1/7;
+  transition: all 0.3s linear;
+}
+
+.project__title {
+  font-size: 1.4rem;
+  color: var(--color-green);
+}
+
+.project__name {
+  font-size: 2.8rem;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.project__desc {
+  font-size: 1.5rem;
+  background-color: #112240;
+  color: #a8b2d1;
+
+  padding: 2.5rem;
+  border-radius: 0.8rem;
+}
+
+.project__stack {
+  margin: 2.5rem 0 1rem;
+}
+
+.project__stack li {
+  display: inline-block;
+  color: #ccd6f6;
+}
+
+.project__stack li + li {
+  margin-left: 2rem;
+}
+
+.project__link {
+  font-size: 1.8rem;
+  margin-left: -1rem;
+}
+
+.project__link a {
+  padding: 1rem;
+}
+.project__link a:hover {
+  color: var(--color-green);
+}
+
+@media (max-width: 767px) {
+  .image__container {
+    opacity: 0.3;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 4rem;
+  }
+  .image__container,
+  .content {
+    grid-area: 1 /1 /-1/13;
+  }
+
+  .image {
+    height: 100%;
+    padding-top: 0;
+  }
+
+  .project__desc {
+    padding: 0;
+    background-color: transparent;
+  }
+}

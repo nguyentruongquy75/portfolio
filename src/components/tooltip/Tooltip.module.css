@@ -1,0 +1,30 @@
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 0.4rem);
+  transform: translateY(-50%);
+
+  background-color: var(--color-bg);
+  color: #bbb;
+
+  font-size: 1.4rem;
+
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--color-gray);
+}
+
+.tooltip::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  /* background-color: aliceblue; */
+
+  --size: 0.3rem;
+  width: var(--size);
+  height: var(--size);
+  border: var(--size) solid;
+  border-color: transparent var(--color-bg) transparent transparent;
+}

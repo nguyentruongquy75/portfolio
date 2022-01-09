@@ -1,0 +1,50 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: var(--nav-width);
+  background-color: var(--color-bg);
+  color: var(--color-gray);
+
+  font-size: 2.4rem;
+
+  padding-top: var(--tab-height);
+}
+
+.nav li {
+  position: relative;
+}
+
+.nav a {
+  width: var(--nav-width);
+  height: var(--nav-width);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav a:hover {
+  color: var(--color-text-sub);
+}
+
+.nav a:hover + .tooltip {
+  display: block;
+}
+
+.tooltip {
+  display: none;
+  animation: fadeIn 0.3s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

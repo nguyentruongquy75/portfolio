@@ -1,0 +1,117 @@
+.main__container {
+  height: calc(100vh - var(--tab-height));
+  overflow-y: scroll;
+}
+
+.main__container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main__container::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray);
+}
+
+.header {
+  padding: 2rem;
+}
+
+.greeting {
+  font-size: 1.8rem;
+  color: var(--color-blue);
+}
+
+.name {
+  font-size: 3rem;
+}
+
+.slogan {
+  font-size: 2.4rem;
+  color: var(--color-text-sub);
+}
+
+.body {
+  padding: 1rem 2rem;
+}
+
+.content__container {
+  display: flex;
+  gap: 5rem;
+}
+
+.content {
+  font-size: 1.8rem;
+  font-weight: lighter;
+  color: var(--color-text-sub);
+
+  flex: 7;
+}
+
+.content p {
+  margin-top: 1.5rem;
+  line-height: 1.5;
+}
+
+.content p span {
+  color: var(--color-green);
+}
+
+.content li {
+  padding-left: 2rem;
+  position: relative;
+}
+
+.content li::after {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-green);
+}
+
+.content a {
+  color: var(--color-blue);
+}
+
+.image__container {
+  flex: 3;
+}
+
+.image {
+  width: 100%;
+  padding-top: 100%;
+
+  position: relative;
+  transition: background-color 0.3s linear;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .content__container {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .content {
+    flex: unset;
+  }
+
+  .image__container {
+    flex: unset;
+    width: 30rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
